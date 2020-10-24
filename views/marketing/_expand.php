@@ -1,7 +1,9 @@
 <?php
-use yii\helpers\Html;
+
 use kartik\tabs\TabsX;
+use yii\helpers\Html;
 use yii\helpers\Url;
+
 $items = [
     [
         'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode('Marketing'),

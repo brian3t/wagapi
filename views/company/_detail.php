@@ -1,8 +1,8 @@
 <?php
 
+use kartik\grid\GridView;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Company */
@@ -17,7 +17,7 @@ use kartik\grid\GridView;
     </div>
 
     <div class="row">
-<?php 
+<?php
     $gridColumn = [
         'id',
         'name',
@@ -58,7 +58,7 @@ use kartik\grid\GridView;
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
-    ]); 
+    ]);
 ?>
     </div>
 </div>

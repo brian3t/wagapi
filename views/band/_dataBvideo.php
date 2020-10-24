@@ -1,8 +1,9 @@
 <?php
+
 use kartik\grid\GridView;
 use yii\data\ArrayDataProvider;
 
-    $dataProvider = new ArrayDataProvider([
+$dataProvider = new ArrayDataProvider([
         'allModels' => $model->bvideos,
         'key' => 'id'
     ]);

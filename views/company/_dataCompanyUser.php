@@ -1,8 +1,9 @@
 <?php
+
 use kartik\grid\GridView;
 use yii\data\ArrayDataProvider;
 
-    $dataProvider = new ArrayDataProvider([
+$dataProvider = new ArrayDataProvider([
         'allModels' => $model->companyUsers,
         'key' => 'id'
     ]);
@@ -18,7 +19,7 @@ use yii\data\ArrayDataProvider;
             'controller' => 'company-user'
         ],
     ];
-    
+
     echo GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => $gridColumns,

@@ -1,8 +1,9 @@
 <?php
+
 use kartik\grid\GridView;
 use yii\data\ArrayDataProvider;
 
-    $dataProvider = new ArrayDataProvider([
+$dataProvider = new ArrayDataProvider([
         'allModels' => $model->bandRates,
         'key' => 'id'
     ]);
@@ -20,7 +21,7 @@ use yii\data\ArrayDataProvider;
             'controller' => 'band-rate'
         ],
     ];
-    
+
     echo GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => $gridColumns,

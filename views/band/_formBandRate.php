@@ -1,7 +1,8 @@
 <div class="form-group" id="add-band-rate">
 <?php
-use kartik\grid\GridView;
+
 use kartik\builder\TabularForm;
+use kartik\grid\GridView;
 use yii\data\ArrayDataProvider;
 use yii\helpers\Html;
 use yii\widgets\Pjax;

@@ -1,6 +1,7 @@
 <?php
-use yii\widgets\DetailView;
+
 use yii\data\ArrayDataProvider;
+use yii\widgets\DetailView;
 
 $gridColumn = [
     ['attribute' => 'id', 'hidden' => true],
