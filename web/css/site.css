@@ -1,0 +1,100 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 20px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* SME changes. Brian3t 2016-04-05
+*********************************************************************************************************
+*/
+.container {
+    width: 100%
+}
+
+a.dropdown-toggle:hover + ul.dropdown-menu, ul.dropdown-menu:hover {
+    display: block;
+}
+
+.navbar-brand > img {
+    height: 100%;
+    width: auto;
+}
+
+div.panel-primary > div > table.kv-grid-table > tbody > tr > td.kv-expand-icon-cell {
+    display: table-cell;
+}
+
+/* Only display first level expand button */
+div.panel-primary > div > table.kv-grid-table > thead > tr > th.kv-expand-header-cell {
+    display: table-cell;
+}
+
+/* Only display first level expand button */
+.navbar-nav > li > form{
+    padding: 7px 0 3px 0;
+}
+.version{
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+@media (max-width:725px) {
+    .version{
+        width: 100%;
+    }
+}
+div.grid-view img{max-width: 300px}
+.popover-xxl {
+    min-width: 960px
+}
