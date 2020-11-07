@@ -116,7 +116,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Live N Out <?= date('Y') ?></p>
+        <p class="pull-left">&copy; NFL Fan Wager <?= date('Y') ?></p>
 
     </div>
 </footer>
