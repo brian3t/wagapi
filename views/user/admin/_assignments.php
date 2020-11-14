@@ -1,32 +1,33 @@
 <?php
 
 /*
- * This file is part of the Dektrium project
+ * This file is part of the 2amigos/yii2-usuario project.
  *
- * (c) Dektrium project <http://github.com/dektrium>
+ * (c) 2amigOS! <http://2amigos.us/>
  *
- * For the full copyright and license information, please view the LICENSE.md
- * file that was distributed with this source code.
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
  */
 
-use dektrium\rbac\widgets\Assignments;
+use Da\User\Widget\AssignmentsWidget;
 
-/**
- * @var yii\web\View 				$this
- * @var dektrium\user\models\User 	$user
- */
+/* @var yii\web\View $this */
+/* @var Da\User\Model\User $user */
+/* @var string[] $params */
 
 ?>
 
-<?php $this->beginContent('@dektrium/user/views/admin/update.php', ['user' => $user]) ?>
+<?php $this->beginContent('@Da/User/resources/views/admin/update.php', ['user' => $user]) ?>
 
-<?= yii\bootstrap\Alert::widget([
-    'options' => [
-        'class' => 'alert-info',
-    ],
-    'body' => Yii::t('user', 'You can assign multiple roles or permissions to user by using the form below'),
-]) ?>
+<?= yii\bootstrap\Alert::widget(
+    [
+        'options' => [
+            'class' => 'alert-info alert-dismissible',
+        ],
+        'body' => Yii::t('usuario', 'You can assign multiple roles or permissions to user by using the form below'),
+    ]
+) ?>
 
-<?= Assignments::widget(['userId' => $user->id]) ?>
+<?= AssignmentsWidget::widget(['userId' => $user->id, 'params' => $params]) ?>
 
 <?php $this->endContent() ?>
