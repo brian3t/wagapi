@@ -126,7 +126,10 @@
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-datecontrol" />
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-field-range" />
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
 </project>

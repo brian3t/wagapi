@@ -2,9 +2,7 @@
 
 namespace app\models\base;
 
-use Yii;
 use yii\behaviors\BlameableBehavior;
-use mootensai\behaviors\UUIDBehavior;
 
 /**
  * This is the base model class for table "wager".
@@ -23,6 +21,7 @@ use mootensai\behaviors\UUIDBehavior;
  * @property integer $point
  * @property string $pledge
  * @property string $invited_at
+ * @property string $calculated_at
  *
  * @property \app\models\Invi[] $invis
  * @property \app\models\User $acceptedBy
@@ -56,14 +55,12 @@ class Wager extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['created_at', 'updated_at', 'invited_at'], 'safe'],
+            [['created_at', 'updated_at', 'invited_at', 'calculated_at'], 'safe'],
             [['type', 'status'], 'string'],
             [['created_by', 'game_id'], 'required'],
             [['created_by', 'pending_by', 'accepted_by', 'game_id', 'hwinner', 'point'], 'integer'],
             [['win_margin'], 'number'],
-            [['pledge'], 'string', 'max' => 800],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['pledge'], 'string', 'max' => 800]
         ];
     }
 
@@ -73,17 +70,6 @@ class Wager extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'wager';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**
@@ -103,9 +89,10 @@ class Wager extends \yii\db\ActiveRecord
             'point' => 'Point',
             'pledge' => 'Pledge',
             'invited_at' => 'Invited At',
+            'calculated_at' => 'Calculated At',
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -113,7 +100,7 @@ class Wager extends \yii\db\ActiveRecord
     {
         return $this->hasMany(\app\models\Invi::className(), ['wager_id' => 'id'])->inverseOf('wager');
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -121,7 +108,7 @@ class Wager extends \yii\db\ActiveRecord
     {
         return $this->hasOne(\app\models\User::className(), ['id' => 'accepted_by'])->inverseOf('wagers');
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -129,7 +116,7 @@ class Wager extends \yii\db\ActiveRecord
     {
         return $this->hasOne(\app\models\User::className(), ['id' => 'created_by'])->inverseOf('wagers');
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -137,7 +124,7 @@ class Wager extends \yii\db\ActiveRecord
     {
         return $this->hasOne(\app\models\Game::className(), ['id' => 'game_id'])->inverseOf('wagers');
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -145,7 +132,7 @@ class Wager extends \yii\db\ActiveRecord
     {
         return $this->hasOne(\app\models\User::className(), ['id' => 'pending_by'])->inverseOf('wagers');
     }
-    
+
     /**
      * @inheritdoc
      * @return array mixed
@@ -156,11 +143,7 @@ class Wager extends \yii\db\ActiveRecord
             'blameable' => [
                 'class' => BlameableBehavior::className(),
                 'createdByAttribute' => 'created_by',
-                'updatedByAttribute' => 'updated_by',
-            ],
-            'uuid' => [
-                'class' => UUIDBehavior::className(),
-                'column' => 'id',
+                'updatedByAttribute' => false,
             ],
         ];
     }

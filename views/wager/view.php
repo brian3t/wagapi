@@ -1,8 +1,8 @@
 <?php
 
+use kartik\grid\GridView;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Wager */
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <h2><?= 'Wager'.' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
-            <?= Html::a('Save As New', ['save-as-new', 'id' => $model->id], ['class' => 'btn btn-info']) ?>            
+            <?= Html::a('Save As New', ['save-as-new', 'id' => $model->id], ['class' => 'btn btn-info']) ?>
             <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
             <?= Html::a('Delete', ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="row">
-<?php 
+<?php
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         'type',
@@ -61,7 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ]);
 ?>
     </div>
-    
+
     <div class="row">
 <?php
 if($providerInvi->totalCount){
@@ -90,9 +90,9 @@ if($providerInvi->totalCount){
 
     </div>
     <div class="row">
-        <h4>User<?= ' '. Html::encode($this->title) ?></h4>
+        <h4>Accepted by User: <?= ' '. Html::encode($model->acceptedBy? $model->acceptedBy->username: 'N/A') ?></h4>
     </div>
-    <?php 
+    <?php
     $gridColumnUser = [
         ['attribute' => 'id', 'visible' => false],
         'username',
@@ -114,43 +114,32 @@ if($providerInvi->totalCount){
         'gdpr_deleted',
         'point',
     ];
-    echo DetailView::widget([
-        'model' => $model->acceptedBy,
-        'attributes' => $gridColumnUser    ]);
+    if (is_object($model->acceptedBy)) {
+        echo DetailView::widget([
+            'model' => $model->acceptedBy,
+            'attributes' => $gridColumnUser]);
+    }
     ?>
     <div class="row">
-        <h4>User<?= ' '. Html::encode($this->title) ?></h4>
+        <h4>Created by User: <?= ' '. Html::encode($model->createdBy?$model->createdBy->username:'N/A') ?></h4>
     </div>
-    <?php 
+    <?php
     $gridColumnUser = [
         ['attribute' => 'id', 'visible' => false],
         'username',
         'email',
-        'password_hash',
-        'auth_key',
-        'unconfirmed_email',
-        'registration_ip',
-        'flags',
-        'confirmed_at',
-        'blocked_at',
-        'last_login_at',
-        'last_login_ip',
-        'auth_tf_key',
-        'auth_tf_enabled',
-        'password_changed_at',
-        'gdpr_consent',
-        'gdpr_consent_date',
-        'gdpr_deleted',
         'point',
     ];
-    echo DetailView::widget([
-        'model' => $model->createdBy,
-        'attributes' => $gridColumnUser    ]);
+    if (is_object($model->createdBy)) {
+        echo DetailView::widget([
+            'model' => $model->createdBy,
+            'attributes' => $gridColumnUser]);
+    }
     ?>
     <div class="row">
         <h4>Game<?= ' '. Html::encode($this->title) ?></h4>
     </div>
-    <?php 
+    <?php
     $gridColumnGame = [
         ['attribute' => 'id', 'visible' => false],
         'teamh_id',
@@ -167,9 +156,9 @@ if($providerInvi->totalCount){
         'attributes' => $gridColumnGame    ]);
     ?>
     <div class="row">
-        <h4>User<?= ' '. Html::encode($this->title) ?></h4>
+        <h4>Pending User to accept: <?= ' ' . Html::encode($model->pendingBy ? $model->pendingBy->username : 'N/A') ?></h4>
     </div>
-    <?php 
+    <?php
     $gridColumnUser = [
         ['attribute' => 'id', 'visible' => false],
         'username',
@@ -191,8 +180,10 @@ if($providerInvi->totalCount){
         'gdpr_deleted',
         'point',
     ];
-    echo DetailView::widget([
-        'model' => $model->pendingBy,
-        'attributes' => $gridColumnUser    ]);
+    if (is_object($model->pendingBy)) {
+        echo DetailView::widget([
+            'model' => $model->pendingBy,
+            'attributes' => $gridColumnUser]);
+    }
     ?>
 </div>
