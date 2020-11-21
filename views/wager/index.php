@@ -28,7 +28,7 @@ $this->registerJs($search);
     <div class="search-form" style="display:none">
         <?=  $this->render('_search', ['model' => $searchModel]); ?>
     </div>
-    <?php 
+    <?php
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
         [
@@ -46,6 +46,10 @@ $this->registerJs($search);
         ['attribute' => 'id', 'visible' => false],
         'type',
         'status',
+        [
+            'attribute' => 'createdBy.username',
+            'label' => 'Created By',
+        ],
         [
                 'attribute' => 'pending_by',
                 'label' => 'Pending By',
@@ -81,8 +85,8 @@ $this->registerJs($search);
         [
                 'attribute' => 'game_id',
                 'label' => 'Game',
-                'value' => function($model){                   
-                    return $model->game->id;                   
+                'value' => function($model){
+                    return $model->game->id;
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\app\models\Game::find()->asArray()->all(), 'id', 'id'),
@@ -105,7 +109,7 @@ $this->registerJs($search);
                 },
             ],
         ],
-    ]; 
+    ];
     ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

@@ -12,43 +12,28 @@ use Yii;
  * @property string $email
  * @property string $password_hash
  * @property string $auth_key
- * @property integer $confirmed_at
  * @property string $unconfirmed_email
- * @property integer $blocked_at
  * @property string $registration_ip
- * @property integer $created_at
- * @property integer $updated_at
  * @property integer $flags
- * @property string $first_name
- * @property string $last_name
- * @property string $note
- * @property string $phone_number_type
- * @property string $phone_number
- * @property string $birthdate
- * @property integer $birth_month
- * @property integer $birth_year
- * @property string $favorite_genres
- * @property string $favorite_venue_types
- * @property string $website_url
- * @property string $twitter_id
- * @property string $facebook_id
- * @property string $instagram_id
- * @property string $google_id
- * @property string $address1
- * @property string $address2
- * @property string $city
- * @property string $state
- * @property string $zipcode
- * @property string $country
+ * @property integer $confirmed_at
+ * @property integer $blocked_at
+ * @property integer $updated_at
+ * @property integer $created_at
  * @property integer $last_login_at
+ * @property string $last_login_ip
+ * @property string $auth_tf_key
+ * @property integer $auth_tf_enabled
+ * @property integer $password_changed_at
+ * @property integer $gdpr_consent
+ * @property integer $gdpr_consent_date
+ * @property integer $gdpr_deleted
+ * @property integer $point
  *
- * @property \app\models\Band[] $bands
- * @property \app\models\BandComment[] $bandComments
- * @property \app\models\BandFollow[] $bandFollows
- * @property \app\models\BandRate[] $bandRates
- * @property \app\models\Event[] $events
- * @property \app\models\UserEvent[] $userEvents
- * @property \app\models\Venue[] $venues
+ * @property \app\models\Invi[] $invis
+ * @property \app\models\Profile $profile
+ * @property \app\models\SocialAccount[] $socialAccounts
+ * @property \app\models\Token[] $tokens
+ * @property \app\models\Wager[] $wagers
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -62,13 +47,11 @@ class User extends \yii\db\ActiveRecord
     public function relationNames()
     {
         return [
-            'bands',
-            'bandComments',
-            'bandFollows',
-            'bandRates',
-            'events',
-            'userEvents',
-            'venues'
+            'invis',
+            'profile',
+            'socialAccounts',
+            'tokens',
+            'wagers'
         ];
     }
 
@@ -78,21 +61,16 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username'], 'required'],
-            [['confirmed_at', 'blocked_at', 'created_at', 'updated_at', 'flags', 'birth_year', 'last_login_at'], 'integer'],
-            [['phone_number_type', 'favorite_genres', 'favorite_venue_types'], 'string'],
-            [['birthdate'], 'safe'],
-            [['username', 'email', 'unconfirmed_email', 'city'], 'string', 'max' => 255],
+            [['username', 'email', 'password_hash', 'auth_key', 'updated_at', 'created_at'], 'required'],
+            [['flags', 'confirmed_at', 'blocked_at', 'updated_at', 'created_at', 'last_login_at', 'password_changed_at', 'gdpr_consent_date', 'point'], 'integer'],
+            [['username', 'email', 'unconfirmed_email'], 'string', 'max' => 255],
             [['password_hash'], 'string', 'max' => 60],
             [['auth_key'], 'string', 'max' => 32],
-            [['registration_ip'], 'string', 'max' => 45],
-            [['first_name', 'last_name', 'twitter_id', 'facebook_id', 'instagram_id', 'google_id', 'state', 'country'], 'string', 'max' => 80],
-            [['note', 'address1'], 'string', 'max' => 2000],
-            [['phone_number', 'zipcode'], 'string', 'max' => 20],
-            [['birth_month'], 'string', 'max' => 3],
-            [['website_url'], 'string', 'max' => 400],
-            [['address2'], 'string', 'max' => 800],
-            [['username'], 'unique']
+            [['registration_ip', 'last_login_ip'], 'string', 'max' => 45],
+            [['auth_tf_key'], 'string', 'max' => 16],
+            [['auth_tf_enabled', 'gdpr_consent', 'gdpr_deleted'], 'string', 'max' => 1],
+            [['username'], 'unique'],
+            [['email'], 'unique']
         ];
     }
 
@@ -115,89 +93,60 @@ class User extends \yii\db\ActiveRecord
             'email' => 'Email',
             'password_hash' => 'Password Hash',
             'auth_key' => 'Auth Key',
-            'confirmed_at' => 'Confirmed At',
             'unconfirmed_email' => 'Unconfirmed Email',
-            'blocked_at' => 'Blocked At',
             'registration_ip' => 'Registration Ip',
             'flags' => 'Flags',
-            'first_name' => 'First Name',
-            'last_name' => 'Last Name',
-            'note' => 'Note',
-            'phone_number_type' => 'Phone Number Type',
-            'phone_number' => 'Phone Number',
-            'birthdate' => 'Birthdate',
-            'birth_month' => 'Birth Month',
-            'birth_year' => 'Birth Year',
-            'favorite_genres' => 'Favorite Genres',
-            'favorite_venue_types' => 'Favorite Venue Types',
-            'website_url' => 'Website Url',
-            'twitter_id' => 'Twitter ID',
-            'facebook_id' => 'Facebook ID',
-            'instagram_id' => 'Instagram ID',
-            'google_id' => 'Google ID',
-            'address1' => 'Address1',
-            'address2' => 'Address2',
-            'city' => 'City',
-            'state' => 'State',
-            'zipcode' => 'Zipcode',
-            'country' => 'Country',
+            'confirmed_at' => 'Confirmed At',
+            'blocked_at' => 'Blocked At',
             'last_login_at' => 'Last Login At',
+            'last_login_ip' => 'Last Login Ip',
+            'auth_tf_key' => 'Auth Tf Key',
+            'auth_tf_enabled' => 'Auth Tf Enabled',
+            'password_changed_at' => 'Password Changed At',
+            'gdpr_consent' => 'Gdpr Consent',
+            'gdpr_consent_date' => 'Gdpr Consent Date',
+            'gdpr_deleted' => 'Gdpr Deleted',
+            'point' => 'Point',
         ];
     }
     
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getBands()
+    public function getInvis()
     {
-        return $this->hasMany(\app\models\Band::className(), ['user_id' => 'id']);
+        return $this->hasMany(\app\models\Invi::className(), ['invited_user_id' => 'id'])->inverseOf('invitedUser');
     }
         
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getBandComments()
+    public function getProfile()
     {
-        return $this->hasMany(\app\models\BandComment::className(), ['created_by' => 'id']);
+        return $this->hasOne(\app\models\Profile::className(), ['user_id' => 'id'])->inverseOf('user');
     }
         
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getBandFollows()
+    public function getSocialAccounts()
     {
-        return $this->hasMany(\app\models\BandFollow::className(), ['user_id' => 'id']);
+        return $this->hasMany(\app\models\SocialAccount::className(), ['user_id' => 'id'])->inverseOf('user');
     }
         
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getBandRates()
+    public function getTokens()
     {
-        return $this->hasMany(\app\models\BandRate::className(), ['user_id' => 'id']);
+        return $this->hasMany(\app\models\Token::className(), ['user_id' => 'id'])->inverseOf('user');
     }
         
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEvents()
+    public function getWagers()
     {
-        return $this->hasMany(\app\models\Event::className(), ['user_id' => 'id']);
-    }
-        
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUserEvents()
-    {
-        return $this->hasMany(\app\models\UserEvent::className(), ['user_id' => 'id']);
-    }
-        
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVenues()
-    {
-        return $this->hasMany(\app\models\Venue::className(), ['user_id' => 'id']);
+        return $this->hasMany(\app\models\Wager::className(), ['pending_by' => 'id'])->inverseOf('acceptedBy')->inverseOf('createdBy')->inverseOf('pendingBy');
     }
     }
