@@ -59,7 +59,7 @@ class Game extends BaseGame
 
             $wag_accepted_person = $un_calculated_wag->acceptedBy;
             if (is_object($wag_accepted_person)){
-                $wag_accepted_person->point += $point_to_add;
+                $wag_accepted_person->point -= $point_to_add;
                 $wag_accepted_person->save();
             }
             $un_calculated_wag->status = 'calculated';

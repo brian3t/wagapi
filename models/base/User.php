@@ -2,8 +2,6 @@
 
 namespace app\models\base;
 
-use Yii;
-
 /**
  * This is the base model class for table "user".
  *
@@ -68,7 +66,7 @@ class User extends \yii\db\ActiveRecord
             [['auth_key'], 'string', 'max' => 32],
             [['registration_ip', 'last_login_ip'], 'string', 'max' => 45],
             [['auth_tf_key'], 'string', 'max' => 16],
-            [['auth_tf_enabled', 'gdpr_consent', 'gdpr_deleted'], 'string', 'max' => 1],
+            [['auth_tf_enabled', 'gdpr_consent', 'gdpr_deleted'], 'boolean'],
             [['username'], 'unique'],
             [['email'], 'unique']
         ];
@@ -109,7 +107,7 @@ class User extends \yii\db\ActiveRecord
             'point' => 'Point',
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -117,7 +115,7 @@ class User extends \yii\db\ActiveRecord
     {
         return $this->hasMany(\app\models\Invi::className(), ['invited_user_id' => 'id'])->inverseOf('invitedUser');
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -125,7 +123,7 @@ class User extends \yii\db\ActiveRecord
     {
         return $this->hasOne(\app\models\Profile::className(), ['user_id' => 'id'])->inverseOf('user');
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -133,7 +131,7 @@ class User extends \yii\db\ActiveRecord
     {
         return $this->hasMany(\app\models\SocialAccount::className(), ['user_id' => 'id'])->inverseOf('user');
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -141,7 +139,7 @@ class User extends \yii\db\ActiveRecord
     {
         return $this->hasMany(\app\models\Token::className(), ['user_id' => 'id'])->inverseOf('user');
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
