@@ -71,13 +71,15 @@ $config = [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
-
+        'cache' => [
+            'class' => 'yii\caching\DummyCache',
+        ],
     ],
     'modules' => [
         'user' => [
             'class' => Da\User\Module::class,
             // ...other configs from here: [Configuration Options](installation/configuration-options.md), e.g.
-            'administrators' => ['admin','ngxtri','windlinx@hotmail.com'], // this is required for accessing administrative actions
+            'administrators' => ['admin', 'ngxtri', 'windlinx@hotmail.com'], // this is required for accessing administrative actions
             'controllerMap' => [
                 'security' => [
                     'class' => 'app\controllers\user\SecurityController'
