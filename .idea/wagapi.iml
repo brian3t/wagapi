@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/yii2helper" isTestSource="false" packagePrefix="usv\yii2helper\" />
       <excludeFolder url="file://$MODULE_DIR$/runtime" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tuyakhov/yii2-json-api" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

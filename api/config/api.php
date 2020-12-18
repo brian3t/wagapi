@@ -15,9 +15,17 @@ $config = [
             'enableCsrfValidation' => false,
             // Enable JSON Input:
             'parsers' => [
-                'application/json' => 'yii\web\JsonParser',
+//                'application/json' => 'yii\web\JsonParser',
+                'application/vnd.api+json' => 'tuyakhov\jsonapi\JsonApiParser',
             ]
         ],
+        'response' => [
+            'format' => \yii\web\Response::FORMAT_JSON,
+            'formatters' => [
+                \yii\web\Response::FORMAT_JSON => 'tuyakhov\jsonapi\JsonApiResponseFormatter'
+            ]
+        ],
+
         'log' => [
 //            'traceLevel' => YII_DEBUG ? 3 : 0,
             'traceLevel' => 3,

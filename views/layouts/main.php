@@ -53,6 +53,10 @@ AppAsset::register($this);
             'label' => 'Games',
             'url' => Url::toRoute(['/game/index']),
         ],
+        [
+            'label' => 'Todo',
+            'url' => Url::toRoute(['/todo/index']),
+        ],
         /*[
             'label' => 'Teams',
             'url' => Url::toRoute(['/team/index']),

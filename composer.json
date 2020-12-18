@@ -47,7 +47,8 @@
     "kartik-v/bootstrap-tabs-x": "dev-master",
     "2amigos/yii2-usuario": "~1.5",
     "kartik-v/yii2-icons": "^1.4",
-    "ext-pdo": "*"
+    "ext-pdo": "*",
+    "tuyakhov/yii2-json-api": "*"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "*",
@@ -55,6 +56,12 @@
     "yiisoft/yii2-faker": "*"
   },
   "config": {
+    "fxp-asset": {
+      "installer-paths": {
+        "npm-asset-library": "vendor/npm",
+        "bower-asset-library": "vendor/bower"
+      }
+    },
     "process-timeout": 1800
   },
   "scripts": {
