@@ -7,9 +7,9 @@ use app\models\base\Todo as BaseTodo;
 /**
  * This is the model class for table "todo".
  */
-class Todo extends BaseTodo implements \tuyakhov\jsonapi\ResourceInterface
+class Todo extends BaseTodo// implements \tuyakhov\jsonapi\ResourceInterface
 {
-    use \tuyakhov\jsonapi\ResourceTrait;
+    //use \tuyakhov\jsonapi\ResourceTrait;
     /**
      * @inheritdoc
      */

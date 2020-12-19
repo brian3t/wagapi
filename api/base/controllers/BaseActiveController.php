@@ -17,9 +17,9 @@ use yii\web\Response;
  */
 class BaseActiveController extends ActiveController
 {
-    public $serializer = 'tuyakhov\jsonapi\Serializer';
+//    public $serializer = 'tuyakhov\jsonapi\Serializer';
 
-    public function behaviors()
+    /*public function behaviors()
     {
         return ArrayHelper::merge(parent::behaviors(), [
             'contentNegotiator' => [
@@ -31,7 +31,7 @@ class BaseActiveController extends ActiveController
                 ],
             ]
         ]);
-    }
+    }*/
 
     public $requestbody;
     public $message;
