@@ -4,7 +4,7 @@ namespace app\api\base\controllers;
 
 use app\api\base\RequestBody;
 use Yii;
-use yii\filters\ContentNegotiator;
+use yii\filters\Cors;
 use yii\helpers\ArrayHelper;
 use yii\rest\ActiveController;
 use yii\web\Response;
@@ -19,7 +19,7 @@ class BaseActiveController extends ActiveController
 {
 //    public $serializer = 'tuyakhov\jsonapi\Serializer';
 
-    /*public function behaviors()
+    /*public function behaviors() for jsonapi
     {
         return ArrayHelper::merge(parent::behaviors(), [
             'contentNegotiator' => [
@@ -41,14 +41,14 @@ class BaseActiveController extends ActiveController
         parent::init();
     }
 
-    /*public function behaviors()
+    public function behaviors()
     {
         $behaviors = parent::behaviors();
         $behaviors['contentNegotiator']['formats']['text/html'] = Response::FORMAT_JSON;
 
         return ArrayHelper::merge([
             [
-                'class' => Cors::className(),
+                'class' => Cors::class,
                 'cors' => [
                     'Origin' => ['*'],
                     'Access-Control-Request-Methods' => ['GET', 'POST', 'OPTIONS', 'DELETE', 'PUT', 'PATCH'],
@@ -56,7 +56,7 @@ class BaseActiveController extends ActiveController
             ],
             // 'authenticator' => ['class' => HttpBasicAuth::className()]
         ], $behaviors);
-    }*/
+    }
 
     public function actions()
     {

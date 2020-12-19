@@ -2,11 +2,6 @@
 
 namespace app\models\base;
 
-use tuyakhov\jsonapi\Inflector;
-use tuyakhov\jsonapi\ResourceTrait;
-use yii\helpers\Url;
-use yii\web\Link;
-
 /**
  * This is the base model class for table "user".
  *
@@ -38,19 +33,18 @@ use yii\web\Link;
  * @property \app\models\Token[] $tokens
  * @property \app\models\Wager[] $wagers
  */
-class User extends \yii\db\ActiveRecord implements \tuyakhov\jsonapi\ResourceInterface
+class User extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
-    use ResourceTrait;
 
-    public function getLinks()
+    /*public function getLinks()
     {
         $reflect = new \ReflectionClass($this);
         $controller = Inflector::camel2id($reflect->getShortName());
         return [
             Link::REL_SELF => Url::to(["$controller/view", 'id' => $this->getId()], true)
         ];
-    }
+    }*/
 
 
     /**
