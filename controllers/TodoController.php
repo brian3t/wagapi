@@ -2,12 +2,12 @@
 
 namespace app\controllers;
 
-use app\models\Todo;
 use Yii;
+use app\models\Todo;
 use yii\data\ActiveDataProvider;
-use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
 
 /**
  * TodoController implements the CRUD actions for Todo model.
@@ -104,7 +104,7 @@ class TodoController extends Controller
         return $this->redirect(['index']);
     }
 
-
+    
     /**
      * Finds the Todo model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

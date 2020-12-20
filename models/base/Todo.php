@@ -2,12 +2,14 @@
 
 namespace app\models\base;
 
+use Yii;
+
 /**
  * This is the base model class for table "todo".
  *
  * @property integer $id
  * @property string $desc
- * @property integer $is_done
+ * @property bool $is_done
  * @property string $created_at
  * @property string $updated_at
  */
@@ -32,9 +34,9 @@ class Todo extends \yii\db\ActiveRecord
     {
         return [
             [['desc'], 'required'],
-            [['is_done'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['desc'], 'string', 'max' => 255],
+            [['is_done'], 'boolean'],
             [['desc'], 'unique']
         ];
     }

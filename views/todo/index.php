@@ -3,9 +3,9 @@
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
+use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
-use yii\helpers\Html;
 
 $this->title = 'Todo';
 $this->params['breadcrumbs'][] = $this->title;
@@ -22,7 +22,7 @@ $this->registerJs($search);
     <p>
         <?= Html::a('Create Todo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-<?php
+<?php 
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
@@ -31,7 +31,7 @@ $this->registerJs($search);
         [
             'class' => 'yii\grid\ActionColumn',
         ],
-    ];
+    ]; 
     ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

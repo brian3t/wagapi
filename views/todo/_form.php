@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'desc')->textInput(['maxlength' => true, 'placeholder' => 'Desc']) ?>
 
-    <?= $form->field($model, 'is_done')->textInput(['placeholder' => 'Is Done']) ?>
+    <?= $form->field($model, 'is_done')->checkbox() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
