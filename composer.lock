@@ -391,16 +391,16 @@
         },
         {
             "name": "bower-asset/selectize",
-            "version": "v0.12.6",
+            "version": "0.12.6-patch1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/selectize/selectize.js.git",
-                "reference": "eb0fca364f9bd6864ae197ea58c853f2717052a9"
+                "reference": "b8df29c9d4733857a4df4ddbf40d72abfd7c3ae9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/selectize/selectize.js/zipball/eb0fca364f9bd6864ae197ea58c853f2717052a9",
-                "reference": "eb0fca364f9bd6864ae197ea58c853f2717052a9",
+                "url": "https://api.github.com/repos/selectize/selectize.js/zipball/b8df29c9d4733857a4df4ddbf40d72abfd7c3ae9",
+                "reference": "b8df29c9d4733857a4df4ddbf40d72abfd7c3ae9",
                 "shasum": ""
             },
             "require": {
@@ -444,7 +444,7 @@
                 "tagging",
                 "ui"
             ],
-            "time": "2018-07-12T21:29:54+00:00"
+            "time": "2019-01-29T04:37:53+00:00"
         },
         {
             "name": "bower-asset/sifter",
@@ -1073,20 +1073,20 @@
         },
         {
             "name": "geocoder-php/common-http",
-            "version": "4.3.0",
+            "version": "4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/geocoder-php/php-common-http.git",
-                "reference": "2995af04aa877ecb705054556bdea540662db971"
+                "reference": "9f44a006d4b45d01dd31ea9b38ee7fb5724cd73e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/geocoder-php/php-common-http/zipball/2995af04aa877ecb705054556bdea540662db971",
-                "reference": "2995af04aa877ecb705054556bdea540662db971",
+                "url": "https://api.github.com/repos/geocoder-php/php-common-http/zipball/9f44a006d4b45d01dd31ea9b38ee7fb5724cd73e",
+                "reference": "9f44a006d4b45d01dd31ea9b38ee7fb5724cd73e",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2",
+                "php": "^7.3 || ^8.0",
                 "php-http/client-implementation": "^1.0",
                 "php-http/discovery": "^1.6",
                 "php-http/httplug": "^1.0 || ^2.0",
@@ -1099,7 +1099,7 @@
                 "nyholm/psr7": "^1.0",
                 "php-http/message": "^1.0",
                 "php-http/mock-client": "^1.0",
-                "phpunit/phpunit": "^7.5",
+                "phpunit/phpunit": "^9.5",
                 "symfony/stopwatch": "~2.5"
             },
             "type": "library",
@@ -1131,7 +1131,7 @@
             "keywords": [
                 "http geocoder"
             ],
-            "time": "2020-07-04T13:18:10+00:00"
+            "time": "2020-12-21T09:30:01+00:00"
         },
         {
             "name": "geocoder-php/google-maps-provider",
@@ -2004,12 +2004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-editable.git",
-                "reference": "8268f92ff7ed2a87006c96f3db874825b67bc31e"
+                "reference": "e3309179aa1e34736f712874baec15d943d55bbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-editable/zipball/8268f92ff7ed2a87006c96f3db874825b67bc31e",
-                "reference": "8268f92ff7ed2a87006c96f3db874825b67bc31e",
+                "url": "https://api.github.com/repos/kartik-v/yii2-editable/zipball/e3309179aa1e34736f712874baec15d943d55bbd",
+                "reference": "e3309179aa1e34736f712874baec15d943d55bbd",
                 "shasum": ""
             },
             "require": {
@@ -2049,7 +2049,7 @@
                 "popover-x",
                 "widget"
             ],
-            "time": "2020-02-21T03:44:29+00:00"
+            "time": "2020-11-27T14:23:42+00:00"
         },
         {
             "name": "kartik-v/yii2-export",
@@ -4432,16 +4432,16 @@
         },
         {
             "name": "php-http/discovery",
-            "version": "1.12.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "4366bf1bc39b663aa87459bd725501d2f1988b6c"
+                "reference": "788f72d64c43dc361e7fcc7464c3d947c64984a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/4366bf1bc39b663aa87459bd725501d2f1988b6c",
-                "reference": "4366bf1bc39b663aa87459bd725501d2f1988b6c",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/788f72d64c43dc361e7fcc7464c3d947c64984a7",
+                "reference": "788f72d64c43dc361e7fcc7464c3d947c64984a7",
                 "shasum": ""
             },
             "require": {
@@ -4493,7 +4493,7 @@
                 "message",
                 "psr7"
             ],
-            "time": "2020-09-22T13:31:04+00:00"
+            "time": "2020-11-27T14:49:42+00:00"
         },
         {
             "name": "php-http/guzzle6-adapter",
@@ -5213,32 +5213,31 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.2.3",
+            "version": "v6.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "149cfdf118b169f7840bbe3ef0d4bc795d1780c9"
+                "reference": "56f0ab23f54c4ccbb0d5dcc67ff8552e0c98d59e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/149cfdf118b169f7840bbe3ef0d4bc795d1780c9",
-                "reference": "149cfdf118b169f7840bbe3ef0d4bc795d1780c9",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/56f0ab23f54c4ccbb0d5dcc67ff8552e0c98d59e",
+                "reference": "56f0ab23f54c4ccbb0d5dcc67ff8552e0c98d59e",
                 "shasum": ""
             },
             "require": {
-                "egulias/email-validator": "~2.0",
+                "egulias/email-validator": "^2.0",
                 "php": ">=7.0.0",
                 "symfony/polyfill-iconv": "^1.0",
                 "symfony/polyfill-intl-idn": "^1.10",
                 "symfony/polyfill-mbstring": "^1.0"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.1",
-                "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
+                "mockery/mockery": "^1.0",
+                "symfony/phpunit-bridge": "^4.4|^5.0"
             },
             "suggest": {
-                "ext-intl": "Needed to support internationalized email addresses",
-                "true/punycode": "Needed to support internationalized email addresses, if ext-intl is not installed"
+                "ext-intl": "Needed to support internationalized email addresses"
             },
             "type": "library",
             "extra": {
@@ -5271,20 +5270,30 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2019-11-12T09:31:26+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/swiftmailer/swiftmailer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-12-08T18:02:06+00:00"
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v5.1.8",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
-                "reference": "65b7d208280f2700f43ba44a8059a25d7b01347b"
+                "reference": "87d6f0a7436b03a57d4cf9a6a9cd0c83a355c49a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/65b7d208280f2700f43ba44a8059a25d7b01347b",
-                "reference": "65b7d208280f2700f43ba44a8059a25d7b01347b",
+                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/87d6f0a7436b03a57d4cf9a6a9cd0c83a355c49a",
+                "reference": "87d6f0a7436b03a57d4cf9a6a9cd0c83a355c49a",
                 "shasum": ""
             },
             "require": {
@@ -5339,20 +5348,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T12:01:57+00:00"
+            "time": "2020-12-18T08:03:05+00:00"
         },
         {
             "name": "symfony/css-selector",
-            "version": "v5.1.8",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "6cbebda22ffc0d4bb8fea0c1311c2ca54c4c8fa0"
+                "reference": "f789e7ead4c79e04ca9a6d6162fc629c89bd8054"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/6cbebda22ffc0d4bb8fea0c1311c2ca54c4c8fa0",
-                "reference": "6cbebda22ffc0d4bb8fea0c1311c2ca54c4c8fa0",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/f789e7ead4c79e04ca9a6d6162fc629c89bd8054",
+                "reference": "f789e7ead4c79e04ca9a6d6162fc629c89bd8054",
                 "shasum": ""
             },
             "require": {
@@ -5401,20 +5410,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T12:01:57+00:00"
+            "time": "2020-12-08T17:02:38+00:00"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v5.1.8",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "0969122fe144dd8ab2e8c98c7e03eedc621b368c"
+                "reference": "ee7cf316fb0de786cfe5ae32ee79502b290c81ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/0969122fe144dd8ab2e8c98c7e03eedc621b368c",
-                "reference": "0969122fe144dd8ab2e8c98c7e03eedc621b368c",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/ee7cf316fb0de786cfe5ae32ee79502b290c81ea",
+                "reference": "ee7cf316fb0de786cfe5ae32ee79502b290c81ea",
                 "shasum": ""
             },
             "require": {
@@ -5472,7 +5481,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T12:01:57+00:00"
+            "time": "2020-12-18T08:02:46+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -6173,24 +6182,24 @@
         },
         {
             "name": "willdurand/geocoder",
-            "version": "4.3.0",
+            "version": "4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/geocoder-php/php-common.git",
-                "reference": "199d6a853947a5051e7ff14d35849759009bad5d"
+                "reference": "3e86f5b10ab0cef1cf03f979fe8e34b6476daff0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/geocoder-php/php-common/zipball/199d6a853947a5051e7ff14d35849759009bad5d",
-                "reference": "199d6a853947a5051e7ff14d35849759009bad5d",
+                "url": "https://api.github.com/repos/geocoder-php/php-common/zipball/3e86f5b10ab0cef1cf03f979fe8e34b6476daff0",
+                "reference": "3e86f5b10ab0cef1cf03f979fe8e34b6476daff0",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2"
+                "php": "^7.3 || ^8.0"
             },
             "require-dev": {
                 "nyholm/nsa": "^1.1",
-                "phpunit/phpunit": "^7.5",
+                "phpunit/phpunit": "^9.5",
                 "symfony/stopwatch": "~2.5"
             },
             "suggest": {
@@ -6228,20 +6237,20 @@
                 "geocoding",
                 "geoip"
             ],
-            "time": "2020-07-04T13:18:10+00:00"
+            "time": "2020-12-21T09:30:01+00:00"
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.39.2",
+            "version": "2.0.39.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "c1d88666f4fc4702af5d492e4c5c35353c9ac6ca"
+                "reference": "7c3b93b57e568509a7cb5cef826d8c424a779f3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/c1d88666f4fc4702af5d492e4c5c35353c9ac6ca",
-                "reference": "c1d88666f4fc4702af5d492e4c5c35353c9ac6ca",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/7c3b93b57e568509a7cb5cef826d8c424a779f3f",
+                "reference": "7c3b93b57e568509a7cb5cef826d8c424a779f3f",
                 "shasum": ""
             },
             "require": {
@@ -6342,7 +6351,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-13T10:15:29+00:00"
+            "time": "2020-11-23T19:17:58+00:00"
         },
         {
             "name": "yiisoft/yii2-authclient",
@@ -6804,16 +6813,16 @@
     "packages-dev": [
         {
             "name": "fakerphp/faker",
-            "version": "v1.11.0",
+            "version": "v1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "f228dc5112bafc14c77d40a2acc0c48058e184b0"
+                "reference": "ab3f5364d01f2c2c16113442fb987d26e4004913"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/f228dc5112bafc14c77d40a2acc0c48058e184b0",
-                "reference": "f228dc5112bafc14c77d40a2acc0c48058e184b0",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/ab3f5364d01f2c2c16113442fb987d26e4004913",
+                "reference": "ab3f5364d01f2c2c16113442fb987d26e4004913",
                 "shasum": ""
             },
             "require": {
@@ -6848,7 +6857,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2020-11-15T20:27:00+00:00"
+            "time": "2020-12-18T16:50:48+00:00"
         },
         {
             "name": "opis/closure",
