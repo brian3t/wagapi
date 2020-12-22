@@ -41,7 +41,7 @@ $config = [
                     'pluralize' => false,
                     'controller' => ['v1/user', 'v1/game', 'v1/todo'],
                     'patterns' => ['PUT,PATCH {id}' => 'update', 'DELETE {id}' => 'delete', 'GET,HEAD {id}' => 'view', 'POST' => 'create', 'GET,HEAD' => 'index', '{id}' => 'options'
-                        , '' => 'options'],
+                      ,'PUT,PATCH' => 'update'   , '' => 'options'],
                     // 'extraPatterns' => [
                     // ],
                     'tokens' => [
