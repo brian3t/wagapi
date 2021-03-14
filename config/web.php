@@ -18,6 +18,10 @@ $params['dateControlSave'] = [
 ];
 $config = [
     'id' => 'basic',
+    'aliases' => [
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset',
+    ],
     'basePath' => dirname(__DIR__),
     'name' => 'NFL Fan Wager',
     'bootstrap' => ['log'],
