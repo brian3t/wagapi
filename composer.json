@@ -21,7 +21,6 @@
   "require": {
     "php": ">=7.2.0",
     "ext-json": "*",
-    "ext-mysql": "*",
     "ext-mysqli": "*",
     "ext-dom": "*",
     "ext-zip": "*",

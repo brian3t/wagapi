@@ -2,7 +2,8 @@ vendor
 web/docs
 config/db.php
 # phpstorm project files
-#.idea
+.idea
+.idea/*.*
 
 # netbeans project files
 nbproject
